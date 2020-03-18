@@ -1,0 +1,70 @@
+﻿@model IEnumerable<PersonelMVC.Models.personel>
+
+@{
+    ViewBag.Title = "PersonelEdits";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Personel Detayları</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Departmanid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Soyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Yas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Maas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dtarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cinsiyet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MedeniHal)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departmanid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Soyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Yas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Maas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dtarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cinsiyet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MedeniHal)
+        </td>
+        <td>
+            @Html.ActionLink("Personel", "Personel")
+        </td>
+    </tr>
+}
+
+</table>

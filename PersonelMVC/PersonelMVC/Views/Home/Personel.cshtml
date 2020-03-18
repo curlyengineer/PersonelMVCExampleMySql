@@ -1,0 +1,48 @@
+﻿@model IEnumerable<PersonelMVC.Models.personel>
+
+@{
+    ViewBag.Title = "Personel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Personel</h2>
+
+<p>
+    @Html.ActionLink("Yeni Personel oluştur", "PersonelCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Departmanid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Soyad)
+        </th>
+      
+      
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departmanid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Soyad)
+        </td>
+       
+        <td>
+            @Html.ActionLink("Güncelle", "PersonelEdit", new { id=item.id }) |
+            @Html.ActionLink("Detay", "PersonelDetails", new { id=item.id }) |
+            @Html.ActionLink("Sil", "PersonelDelete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

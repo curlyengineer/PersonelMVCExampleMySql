@@ -1,0 +1,42 @@
+﻿@model PersonelMVC.Models.personel
+@{
+    ViewBag.Title = "PersonelCreate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Personel Ekle</h2>
+@using(Html.BeginForm("PersonelKaydet","Home",FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(m=>m.id)
+    <br />
+    @Html.LabelFor(m => m.Departmanid)
+    @Html.TextBoxFor(m => m.Departmanid, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.Ad)
+    @Html.TextBoxFor(m => m.Ad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.Soyad)
+    @Html.TextBoxFor(m => m.Soyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.Yas)
+    @Html.TextBoxFor(m => m.Yas, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.Maas)
+    @Html.TextBoxFor(m => m.Maas, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.Dtarihi)
+    <label>Tarihi Yıl-Ay-Gün olarak giriniz :</label>
+    @Html.TextBoxFor(m => m.Dtarihi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.Cinsiyet)
+    @Html.TextBoxFor(m => m.Cinsiyet, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.MedeniHal)
+    @Html.TextBoxFor(m => m.MedeniHal, new { @class = "form-control" })
+    <br />
+    <input type="submit" class="btn btn-success" value="KAYDET" />
+</div>
+ 
+
+}

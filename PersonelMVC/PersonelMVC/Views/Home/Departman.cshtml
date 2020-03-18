@@ -1,0 +1,39 @@
+﻿@model IEnumerable<PersonelMVC.Models.Departman>
+
+@{
+    ViewBag.Title = "Departman";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Departman</h2>
+
+<p>
+    @Html.ActionLink("Yeni Departman", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model=>model.Departman_kodu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem=>item.Departman_kodu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Departman Güncelle", "DepartmanEdit", new { id=item.id }) |
+            @Html.ActionLink("Departman Sil", "DepartmanDelete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
